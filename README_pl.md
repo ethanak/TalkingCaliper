@@ -138,7 +138,7 @@ Ponieważ akumulatora nie ma, polecenie sprawdzenia stanu baterii będzie genero
 
 ### Wersja bazowa
 
-![schemat wersji pełnej](/images/testsch.png)
+![schemat wersji pełnej](/images/fullsch.png)
 
 Najprostsza realnie możliwa do wykonania działającego urządzenia. Różni się od poprzedniej tym, że zasilanie wzmacniacza pobierane jest albo bezpośrednio z akumulatora, albo (w przypadku podłączenia USB) z wejścia Vin. Dodatkowo jest już podłączony  miernik stanu baterii.
 

@@ -135,7 +135,7 @@ Since there is no battery, the command to check the battery status will generate
 
 ### Base version
 
-![full version diagram](/images/testsch.png)
+![full version diagram](/images/fullsch.png)
 
 The simplest one that is realistically possible to make a working device. It differs from the previous one in that the amplifier power is taken either directly from the battery or (in the case of a USB connection) from the Vin input. Additionally, a battery status meter is already connected.
 
