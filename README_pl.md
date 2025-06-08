@@ -112,6 +112,8 @@ Dla innych języków:
 
 * XIAO ESP32-S3
 * Moduł MAX98357A
+* Mały głośnik (oryginalnie użyty 15x24x4 1W)
+* Akumulator LiPo min. 250 mAh
 * 2 x dioda Schottky (min. 0.5A)
 * 2 x dioda prostownicza (najmniejsza, parametry dowolne) do zasilania suwmiarki
 * przycisk tact switch

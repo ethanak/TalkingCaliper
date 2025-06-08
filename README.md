@@ -109,6 +109,8 @@ For other languages:
 
 * XIAO ESP32-S3
 * MAX98357A module
+* Small speaker (originally used 15x24x4 1W)
+* LiPo battery min. 250 mAh
 * 2 x Schottky diode (min. 0.5A)
 * 2 x rectifier diode (the smallest, any parameters) to power the caliper
 * tact switch button
