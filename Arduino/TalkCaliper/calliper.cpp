@@ -6,7 +6,7 @@
 // Original code: https://github.com/MGX3D/EspDRO
 
 // timeout for a packet read 
-#define PACKET_READ_TIMEOUT 250
+#define PACKET_READ_TIMEOUT 150
 
 // Packet format: [0 .. 19]=data, 20=sign, [21..22]=unused?, 23=inch
 #define PACKET_BITS       24
@@ -17,7 +17,7 @@
 #define ADC_TRESHOLD 1600
 
 // timeout in milliseconds for a bit read ($TODO - change to micros() )
-#define BIT_READ_TIMEOUT 100
+#define BIT_READ_TIMEOUT 50
 
 
 static int ipos,vdl[32];
