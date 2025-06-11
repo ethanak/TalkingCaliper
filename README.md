@@ -2,8 +2,6 @@
 
 A multilingual speaking caliper attachment.
 
-**WARNING - the file is under construction!**
-
 ## Short description
 
 ![general view](/images/vfront.jpg)
@@ -63,7 +61,11 @@ Additionally, after connecting the charger, the charging mode is started, where 
 
 ## Program
 
-The program is currently only adapted to the XIAO ESP32S3 board
+The program is currently only adapted to the XIAO ESP32S3 board.
+Used in program:
+
+* sonic_lite from library [Sonic](https://github.com/waywardgeek/sonic/)
+* Piece of code for reading caliper data from  [EspDRO](https://github.com/MGX3D/EspDRO)
 
 ### Requirements:
 
@@ -145,6 +147,10 @@ As before, the charger connection detection must be disabled.
 
 Additional elements: two Schottky diodes, two resistors, optional capacitor.
 
+Instead of Schottky diodes, you can use rectifier diodes of min. 0.5A as a last resort,
+but you have to take into account that the voltage supplying the I2S amplifier circuit
+may drop below the minimum required value of 2.5V with a partially discharged battery.
+
 ### Caliper power supply from the attachment battery
 
 If the attachment is not permanently attached to the caliper, this should not be used and the caliper should be powered from the internal battery. In the case of a permanent connection, this should be considered: as a rule, the time needed to recharge the battery is at least an order of magnitude shorter than the time needed to find a battery store and buy one. And as we know, batteries discharge at the least expected moment... In addition, the system (including the caliper) can then be powered by any charger (if the battery is discharged).
@@ -175,11 +181,18 @@ To calibrate the battery status sensor, access to gnd and the +bat pad is requir
 
 ### Caliper plug
 
-It should be printed from TPU [STL file](/connector/mini_connector.jpg),
-preferably with a 0.1 mm layer. The method of attaching the cable is shown in the photos in the [Connector](/connector/) folder.
+The project is a modified version of the plug from [EspDRO](https://github.com/MGX3D/EspDRO).
+You can also use the original version.
+
+The plug should be printed from TPU or similar elastomer [STL file](/connector/mini_connector.jpg),
+preferably with a 0.1 mm layer. The way to attach the cable is shown in the pictures in the [Connector](/connector/) folder.
 
 ### Housing
 
 Due to the possibility of using different elements and configurations, it is not possible to include STL files. The attached file [OpenSCAD](/caliper.scad) can be a basis for designing the housing
 
-*to be completed soon*
+## Other voices and languages.
+
+It is possible to implement other voices (e.g. using commercial
+synthesizers), as well as other languages. More information in the folder
+[voice preparation](/prepare).

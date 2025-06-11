@@ -2,8 +2,6 @@
 
 Mówiąca w wielu językach przystawka do suwmiarki.
 
-**UWAGA - plik nie jest ukończony!**
-
 ## Krótki opis
 
 ![widok ogólny](/images/vfront.jpg)
@@ -65,7 +63,11 @@ Dodatkowo po podłączeniu ładowania uruchamiany jest tryb ładowania, gdzie ur
 
 ## Program
 
-Program na chwilę obecną jest przystosowany wyłącznie do płytki XIAO ESP32S3
+Program na chwilę obecną jest przystosowany wyłącznie do płytki XIAO ESP32S3.
+W programie użyto:
+
+* sonic_lite z biblioteki [Sonic](https://github.com/waywardgeek/sonic/)
+* fragment kodu odczytu suwmiarki z [EspDRO](https://github.com/MGX3D/EspDRO)
 
 ### Wymagania:
 
@@ -148,6 +150,11 @@ Podobnie jak poprzednio, wykrywanie podłączenia ładowarki musi być wyłączo
 
 Dodatkowe elementy: dwie diody Schottky, dwa rezystory, opcjonalny kondensator.
 
+Zamiast diod Schottky można w ostateczności użyć diod prostowniczych min. 0.5A,
+ale trzeba liczyć się z tym, że napięcie zasilające układ wzmacniacza I2S
+może przy częściowo rozładowanym akumulatorze spaść poniżej minimalnej
+wymaganej wartości 2.5V,.
+
 ### Zasilanie suwmiarki z akumulatora przystawki
 
 Jeśli przystawka nie jest na stałe przymocowana do suwmiarki, nie należy tego stosować i pozostawić zasilanie suwmiarki z wewnętrznej baterii. W przypadku stałego połączenia należy to rozważyć: z reguły czas potrzebny do podładowania akumulatora jest o co najmniej rząd wielkości niższy, niż czas potrzebny do znalezienia sklepu z bateriami i kupienia jednej sztuki. A wiadomo, że baterie rozładowują się w najmniej oczekiwanym momencie... Poza tym układ (łącznie z suwmiarką) może być wtedy zasilany jakiejkolwiek ładowarki (jeśli akumulator jest rozładowany).
@@ -171,21 +178,34 @@ Konieczne zakomentowanie
 
  w pliku common.h
 
- ### Uwagi
+### Uwagi
  
- Do wykonania kalibracji czujnika stanu akumulatora konieczny jest dostęp do gnd i pada +bat. O ile przed zamontowaniem przystawki jest to trywialne (+bat jest dostępny na wyprowadzeniach wyłącznika, gnd w kilku miejscach) - o tyle po zamontowaniu nie ma już takiej możliwości. Należy o tym pamiętać i dokonać kalibracji przed zamontowaniem przystawki na stałe.
- 
- 
+Do wykonania kalibracji czujnika stanu akumulatora konieczny jest dostęp do gnd i pada +bat. O ile przed zamontowaniem przystawki jest to trywialne (+bat jest dostępny na wyprowadzeniach wyłącznika, gnd w kilku miejscach) - o tyle po zamontowaniu nie ma już takiej możliwości. Należy o tym pamiętać i dokonać kalibracji przed zamontowaniem przystawki na stałe.
+  
 ## Konstrukcja mechaniczna
 
 ### Wtyczka do suwmiarki
 
-Powinna być wydrukowana z TPU [plik STL](/connector/mini_connector.jpg),
+ Wtyczkę należy wydrukować z TPU,
+
+### Wtyczka do suwmiarki
+
+Projekt jest zmodyfikowaną wersją wtyczki z [EspDRO](https://github.com/MGX3D/EspDRO).
+Można równie dobrze użyć oryginalnej wersji.
+
+Wtyczka powinna być wydrukowana z TPU lub podobnego elastomeru [plik STL](/connector/mini_connector.jpg),
 najlepiej z warstwą 0.1 mm. Sposób zamocowania przewodu pokazują zdjęcia w folderze [Connector](/connector/).
 
 ### Obudowa
 
-Z uwagi na możliwość użycia różnych elementów i konfiguracji nie ma możliwości zamieszczenia plików STL. Załączony plik [OpenSCAD](/caliper.scad) może stanowić bazę do zaprojetowania obudowy
+Z uwagi na możliwość użycia różnych elementów i konfiguracji nie ma
+możliwości zamieszczenia plików STL. Załączony plik
+[OpenSCAD](/caliper.scad) może stanowić bazę do zaprojetowania obudowy.
 
-*dokończenie wkrótce*
+## Inne głosy i języki.
+
+Istnieje możliwość implementacji innych głosów (np. używając komercyjnych
+syntezatorów), jak również innych języków. Bliższe informacje w folderze
+[przygotowanie głosów](/prepare) (opis wyłącznie po angielsku).
+
 
