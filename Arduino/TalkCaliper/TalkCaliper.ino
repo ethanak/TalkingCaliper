@@ -385,7 +385,7 @@ void sayPacket(int packet)
     char buf[32];
     getStrResult(buf, packet);
     lastSaidPacket=packet;
-    lastSpokenValue = packetValue(packet);
+    lastSpokenValue = lastKnownPacketValue = packetValue(packet);
     mdits(buf);
     qSay(mainVox, mainSpeed,mainVol,  wordBufLen, wordBuffer,blubuffer);
     speaking = true;
@@ -435,7 +435,10 @@ bool canSayChange(long packet)
 {
     if (lastKnownPacketValue == PACKET_NO_DATA) return true;
     int pv=packetValue(packet);
-    if (abs(lastKnownPacketValue - pv) > 100) return false;
+    if (abs(lastKnownPacketValue - pv) > 10) {
+        lastKnownPacketValue = pv;
+        return false;
+    }
     if (abs(lastSpokenValue - pv) < 2) return false;
     return true;
 }
